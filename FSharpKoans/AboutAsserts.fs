@@ -2,24 +2,23 @@
 open FSharpKoans.Core
 
 //---------------------------------------------------------------
-// Getting Started
+// はじめに
 //
-// The F# Koans are a set of exercises designed to get you familiar 
-// with F#. By the time you're done, you'll have a basic 
-// understanding of the syntax of F# and learn a little more
-// about functional programming in general.
+// F# KoansはF#に慣れるための練習問題集です。
+// これが終わる頃には、F#の構文を基本的に理解し、
+// 関数型プログラミングの一般的な知識が少しずつ身についていることでしょう。
 //
-// Answering Problems
+// 問題に答える
 // 
-// This is where the fun begins! Each Koan method contains
-// an example designed to teach you a lesson about the F# language. 
-// If you execute the program defined in this project, you will get
-// a message that the AssertEquality koan below has failed. Your
-// job is to fill in the blank (the __ symbol) to make it pass. Once
-// you make the change, re-run the program to make sure the koan
-// passes, and continue on to the next failing koan.  With each 
-// passing koan, you'll learn more about F#, and add another
-// weapon to your F# programming arsenal.
+// お楽しみはこれからです。それぞれの Koan メソッドには、
+// F# 言語に関するレッスンのための例題が含まれています。
+// このプロジェクトで定義されたプログラムを実行すると、
+// 以下の AssertEquality Koan が失敗した、というメッセージが表示されます。
+// あなたの仕事は、空欄（ __ 記号）を埋めてKoanを成功させることです。
+// 変更を行ったら、プログラムを再実行してKoanが成功することを確認し、
+// 次の失敗したKoanに進みます。
+// Koanが成功するたびに、F# についての知識が深まり、
+// F# プログラミングの武器が増えていきます。
 //---------------------------------------------------------------
 [<Koan(Sort = 1)>]
 module ``about asserts`` =
@@ -27,11 +26,11 @@ module ``about asserts`` =
     [<Koan>]
     let AssertExpectation() =
         let expected_value = 1 + 1
-        let actual_value = __ //start by changing this line
+        let actual_value = __ // この行を変更することから始めましょう。
      
         AssertEquality expected_value actual_value
  
-    //Easy, right? Now try one more
+    // 簡単ですね？もう一問やってみましょう。
 
     [<Koan>]
     let FillInValues() =

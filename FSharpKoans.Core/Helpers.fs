@@ -4,7 +4,7 @@ module FSharpKoans.Core.Helpers
 open System
 open NUnit.Framework
 
-let inline __<'T> : 'T = failwith "Seek wisdom by filling in the __"
+let inline __<'T> : 'T = failwith "__ を埋めて真理を追い求めましょう"
 
 type FILL_ME_IN =
     class end
@@ -16,8 +16,8 @@ let AssertWithMessage (x : bool) message = Assert.IsTrue(x, message)
 
 let inline AssertEquality (x:'T) (y:'T) =
     match box y with
-    | :? System.Type as t when t = typeof<FILL_ME_IN> -> failwith "Seek wisdom by correcting the type FILL_ME_IN"
-    | :? System.Type as t when t = typeof<FILL_IN_THE_EXCEPTION> -> failwith "Seek wisdom by correcting the type FILL_IN_THE_EXCEPTION"
+    | :? System.Type as t when t = typeof<FILL_ME_IN> -> failwith "FILL_ME_IN に型を埋めて真理を追い求めましょう"
+    | :? System.Type as t when t = typeof<FILL_IN_THE_EXCEPTION> -> failwith "FILL_IN_THE_EXCEPTION に例外型を埋めて真理を追い求めましょう"
     | _ -> Assert.AreEqual(x,y)
 
 let AssertInequality (x:'T) (y:'T) = Assert.AreNotEqual(x,y)

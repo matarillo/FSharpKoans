@@ -2,10 +2,10 @@
 open FSharpKoans.Core
 
 //---------------------------------------------------------------
-// About Tuples
+// タプルについて
 //
-// Tuples are used to easily group together values in F#. They're 
-// another fundamental construct of the language.
+// F#のタプルは値を簡単にグループ化するために使われます。
+// タプルはF#言語の基本的な構成要素の一つです。
 //---------------------------------------------------------------
 [<Koan(Sort = 6)>]
 module ``about tuples`` =
@@ -29,13 +29,13 @@ module ``about tuples`` =
     [<Koan>]
     let AccessingTupleElementsWithPatternMatching() =
 
-        (* fst and snd are useful in some situations, but they only work with
-           tuples containing two elements. It's usually better to use a 
-           technique called pattern matching to access the values of a tuple. 
+        (* fstとsndは状況によっては便利ですが、2つの要素を含むタプルでしか
+           動作しません。通常は、タプルの値にアクセスするには
+           パターンマッチングと呼ばれるテクニックを使う方が良いでしょう。
            
-           Pattern matching works with tuples of any arity, and it allows you to 
-           simultaneously break apart the tuple while assigning a name to each 
-           value. Here's an example. *)
+           パターンマッチングは任意の要素数のタプルで動作し、
+           各値に名前を割り当てながら同時にタプルを分割することができます。
+           例を挙げてみます。 *)
         
         let items = ("apple", "dog", "Mustang")
         
@@ -53,8 +53,8 @@ module ``about tuples`` =
         
         AssertEquality animal __
     
-    (* NOTE: pattern matching is found in many places
-             throughout F#, and we'll revisit it again later *)
+    (* 注意: パターンマッチは、F# の多くの場所で見られます。
+             これについては後でまた考察します。 *)
         
     [<Koan>]
     let ReturningMultipleValuesFromAFunction() =
@@ -67,9 +67,8 @@ module ``about tuples`` =
         AssertEquality squared __
         AssertEquality cubed __
     
-    (* THINK ABOUT IT: Is there really more than one return value?
-                       What type does the squareAndCube function
-                       return? *)
+    (* 考察: 返り値は1つだけではないのでしょうか？
+             squareAndCube関数の戻り値の型は？ *)
     
     [<Koan>]
     let TheTruthBehindMultipleReturnValues() =

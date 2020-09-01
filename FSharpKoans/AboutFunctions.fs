@@ -2,19 +2,17 @@
 open FSharpKoans.Core
 
 //---------------------------------------------------------------
-// About Functions
+// 関数について
 //
-// Now that you've seen how to bind a name to a value with let,
-// you'll learn to use the let keyword to create functions.
+// let を使って名前と値をバインドする方法を見てきましたが、
+// 次は let キーワードを使って関数を作る方法を学びます。
 //---------------------------------------------------------------
 [<Koan(Sort = 3)>]
 module ``about functions`` =
 
-    (* By default, F# is whitespace sensitive.
-       For functions, this means that the last
-       line of a function is its return value,
-       and the body of a function is denoted
-       by indentation. *)
+    (* デフォルトでは、F#は空白に意味があります。
+       関数の場合は、関数の最後の行が戻り値であり、
+       関数の本文はインデントで示されることを意味します。 *)
 
     let add x y =
         x + y
@@ -41,8 +39,8 @@ module ``about functions`` =
     [<Koan>]
     let AddingTypeAnnotations() =
 
-        (* Sometimes you need to help F#'s type inference system out with an
-           explicit type annotation *)
+        (* 時には、F# の型推論システムを
+           明示的な型注釈で支援しなければならない場合があります。 *)
     
         let sayItLikeAnAuctioneer (text:string) =
             text.Replace(" ", "")
@@ -50,7 +48,7 @@ module ``about functions`` =
         let auctioneered = sayItLikeAnAuctioneer "going once going twice sold to the lady in red"
         AssertEquality auctioneered __
 
-        //TRY IT: What happens if you remove the type annotation on text?
+        // 実験: text の型注釈を削除するとどうなりますか？
 
     [<Koan>]
     let VariablesInTheParentScopeCanBeAccessed() =
@@ -65,8 +63,9 @@ module ``about functions`` =
 
         AssertEquality caffeinatedReply __
 
-        (* NOTE: Accessing the suffix variable in the nested caffeinate function 
-                 is known as a closure. 
-                 
-                 See http://en.wikipedia.org/wiki/Closure_(computer_science) 
-                 for more about about closure. *)
+        (* 注: 内側の caffeinate 関数の中から suffix 変数にアクセスすることは、
+           クロージャとして知られています。
+           
+           クロージャについての詳細は
+           https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AD%E3%83%BC%E3%82%B8%E3%83%A3
+           を参照してください。 *)

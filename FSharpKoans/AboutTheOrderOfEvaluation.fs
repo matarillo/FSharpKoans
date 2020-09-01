@@ -2,11 +2,10 @@
 open FSharpKoans.Core
 
 //---------------------------------------------------------------
-// About the Order of Evaluation
+// 評価の順番について
 //
-// Sometimes you'll need to be explicit about the order in which
-// functions are evaluated. F# offers a couple mechanisms for
-// doing this.
+// 時には、関数が評価される順番を明示する必要があるでしょう。
+// F#には、これを実現するためのメカニズムがいくつかあります。
 //---------------------------------------------------------------
 [<Koan(Sort = 4)>]
 module ``about the order of evaluation`` =
@@ -20,7 +19,7 @@ module ``about the order of evaluation`` =
 
         AssertEquality result __
 
-        (* TRY IT: What happens if you remove the parenthesis?*)
+        (* 実験: カッコを外すとどうなりますか？*)
 
     [<Koan>]
     let TheBackwardPipeOperatorCanAlsoHelpWithGrouping() =

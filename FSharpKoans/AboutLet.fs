@@ -2,11 +2,11 @@
 open FSharpKoans.Core
 
 //---------------------------------------------------------------
-// About Let
+// letについて
 //
-// The let keyword is one of the most fundamental parts of F#.
-// You'll use it in almost every line of F# code you write, so
-// let's get to know it well! (no pun intended)
+// let キーワードは F# の最も基本的な部分の一つです。
+// F# のコードのほとんどすべての行で使うことになるので、
+// よく知っておきましょう。
 //---------------------------------------------------------------
 [<Koan(Sort = 2)>]
 module ``about let`` =
@@ -17,9 +17,9 @@ module ``about let`` =
         
         AssertEquality x __
     
-    (* In F#, values created with let are inferred to have a type like
-       "int" for integer values, "string" for text values, and "bool" 
-       for true or false values. *)
+    (* F#では、letで作成された値は、整数値の場合は "int"、
+       テキスト値の場合は "string"、真偽値の場合は "bool" のような
+       型を持っていると推論されます。 *)
     [<Koan>]
     let LetInfersTheTypesOfValuesWherePossible() =
         let x = 50
@@ -41,27 +41,28 @@ module ``about let`` =
         AssertEquality typeOfX typeof<FILL_ME_IN>
         AssertEquality typeOfY typeof<FILL_ME_IN>
 
-        (* You don't usually need to provide explicit type annotations types for 
-           local variables, but type annotations can come in handy in other 
-           contexts as you'll see later. *)
+        (* 通常、ローカル変数には明示的な型注釈で
+           型を指定する必要はありませんが、
+           型注釈は、後述するように
+           他の文脈でも便利に使うことができます。 *)
     
     [<Koan>]
     let FloatsAndInts() =
-        (* Depending on your background, you may be surprised to learn that
-           in F#, integers and floating point numbers are different types. 
-           In other words, the following is true. *)
+        (* 予備知識にもよりますが、F#では整数と浮動小数点数は
+           別の型であることを知って驚くかもしれません。
+           つまり、以下のようになります。 *)
         let x = 20
         let typeOfX = x.GetType()
 
         let y = 20.0
         let typeOfY = y.GetType()
 
-        //you don't need to modify these
+        // これらを修正する必要はありません。
         AssertEquality typeOfX typeof<int>
         AssertEquality typeOfY typeof<float>
 
-        //If you're coming from another .NET language, float is F# slang for
-        //the double type.
+        // 他の.NET言語をご存じであれば、
+        // floatはdouble型のことを表すF#のスラングです。
 
     [<Koan>]
     let ModifyingTheValueOfVariables() =
@@ -74,12 +75,12 @@ module ``about let`` =
     let YouCannotModifyALetBoundValueIfItIsNotMutable() =
         let x = 50
         
-        //What happens if you uncomment the following?
+        // 以下のコメントを外すとどうなりますか？
         //
-        //x <- 100
+        // x <- 100
 
-        //NOTE: Although you can't modify immutable values, it is possible
-        //      to reuse the name of a value in some cases using "shadowing".
+        // 注意: イミュータブルな値を変更することはできませんが、
+        // 「シャドウイング」を使用して名前を再利用することは可能です。
         let x = 100
          
         AssertEquality x __

@@ -3,11 +3,10 @@ open FSharpKoans.Core
 open Microsoft.FSharp.Reflection
 
 //---------------------------------------------------------------
-// About Unit
+// unitについて
 //
-// The unit type is a special type that represents the lack of
-// a value. It's similar to void in other languages, but unit
-// is actually considered to be a type in F#.
+// unit型は、値の欠落を表す特殊な型です。
+// 他の言語ではvoidに似ていますが、F#ではunitは実際の型と考えられています。
 //---------------------------------------------------------------
 [<Koan(Sort = 5)>]
 module ``about unit`` =
@@ -15,11 +14,12 @@ module ``about unit`` =
     [<Koan>]
     let UnitIsUsedWhenThereIsNoReturnValueForAFunction() =
         let sendData data =
-            //...sending the data to the server...
+            // ...サーバーにデータを送信するコード...
             ()
 
         let x = sendData "data"
-        AssertEquality x __ //Don't overthink this. Note also the value "()" displays as "null" in some cases.
+        AssertEquality x __ (* 考えすぎないようにしましょう。
+                               また、"()"の値が "null"と表示される場合があることにも注意してください。 *)
 
     [<Koan>]
     let ParameterlessFunctionsTakeUnitAsTheirArgument() =
