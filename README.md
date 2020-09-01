@@ -1,44 +1,44 @@
 # Functional Koans - F# #
 
-Inspired by EdgeCase's fantastic [Ruby koans](http://github.com/edgecase/ruby_koans),
-the goal of the F# koans is to teach you F# through testing.
+EdgeCaseによる素晴らしい [Ruby koans](http://github.com/edgecase/ruby_koans) に影響を受けて作られた、
+F# koansの目的は、テストを通じてF#を教えることです。
 
-When you first run the koans, you'll be presented with a runtime error and a
-stack trace indicating where the error occured. Your goal is to make the
-error go away. As you fix each error, you should learn something about
-the F# language and functional programming in general.
+最初に koans を実行すると、実行時のエラーと、エラーが発生した場所
+を示すスタックトレースが表示されます。あなたのゴールはエラーを
+なくすことです。それぞれのエラーを修正していくうちに、F# 言語や
+関数型プログラミング全般について何かを学ぶことができるはずです。
 
-Your journey towards F# enlightenment starts in the AboutAsserts.fs file. These
-koans will be very simple, so don't overthink them! As you progress through
-more koans, more and more F# syntax will be introduced which will allow
-you to solve more complicated problems and use more advanced techniques.
+F# の悟りへの旅は AboutAsserts.fs ファイルから始まります。これらのkoanは非常に
+シンプルなものですので、考えすぎないようにしてください。より多くのkoanを読んで
+いくうちに、F#の構文がどんどん紹介されていき、より複雑な問題を解決したり、より
+高度なテクニックを使うことができるようになります。
 
 ### Running with Docker
 
-To launch in watch mode using docker run the following command;
+dockerを使ってウォッチモードで起動するには、以下のコマンドを実行します。
 
 `$ ./docker.sh`
 
 ### Prerequisites
 
-The F# Koans needs [.Net Core 3.1](https://www.microsoft.com/net/download/core) to be built and run. Make sure that you have installed it before building the project. This is the long-term servicing release of .NET Core that many modern F# and .NET applications use.
+F# Koansをビルドして実行するには[.Net Core 3.1](https://www.microsoft.com/net/download/core)が必要です。プロジェクトをビルドする前にインストールされていることを確認してください。これは、最新のF#や.NETアプリケーションの多くが使用している.NET Coreの長期保守リリースです。
 
-Additionally, the project provides [Visual Studio Code](https://code.visualstudio.com/) configuration for running.
-To be able to run F# projects in Visual Studio Code, the
-[Ionide plugin](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp) should be also installed.
+さらに、プロジェクトを実行するための[Visual Studio Code](https://code.visualstudio.com/)設定を提供します。
+Visual Studio CodeでF#プロジェクトを実行できるようにするには、
+[Ionideプラグイン](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp)もインストールする必要があります。
 
 ### Running the Koans from the command line (.Net Core)
 
-1. To build the Koans, run `dotnet build` command in the project root.
+1. Koansをビルドするには、プロジェクトルートで `dotnet build` コマンドを実行します。
 
-2. To run the Koans, run `dotnet run -p FSharpKoans/FSharpKoans.fsproj` in the root directory or `dotnet run` in `FSharpKoans` project directory.
+2. Koansを実行するには、ルートディレクトリで `dotnet run -p FSharpKoans/FSharpKoans.fsproj` を実行するか、 `FSharpKoans` プロジェクトディレクトリで `dotnet run` を実行してください。
 
 ### Running the Koans in Visual Studio Code
 
-1. Open the project directory in Visual Studio Code with Ionide-fharp plugin installed
-and press F5 to build and launch the Koans (require some time to build the project before launch).
+1. Ionide-fharpプラグインをインストールした状態でVisual Studio Codeのプロジェクトディレクトリを開き、
+F5を押してKoansをビルドして起動します（起動前にプロジェクトをビルドするのに時間がかかります）。
 
 ### Using dotnet-watch
 
-You can also use [dotnet-watch](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/dotnet-watch.md) to have your changes reloaded automatically.
-To do so, navigate into `FSharpKoans` directory and run `dotnet watch run`. Now, after you change the project code, it will be automatically reloaded and tests rerun.
+また、[dotnet-watch](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/dotnet-watch.md)を使って変更内容を自動的にリロードすることもできます。
+これを行うには、 `FSharpKoans` ディレクトリに移動し、 `dotnet watch run` を実行してください。これで、プロジェクトコードを変更した後、自動的にリロードされ、テストが再実行されます。
