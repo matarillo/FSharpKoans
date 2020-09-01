@@ -2,12 +2,11 @@
 open FSharpKoans.Core
 
 //---------------------------------------------------------------
-// About Looping
+// ループについて
 //
-// While it's more common in F# to use the Seq, List, or Array
-// modules to perform looping operations, you can still fall 
-// back on traditional imperative looping techniques that you may 
-// be more familiar with.
+// F#ではSeq, List, Arrayモジュールを使用してループ処理を行うことが
+// 一般的ですが、従来の命令型ループ処理のテクニックを使用することも
+// できます。そちらの方がなじみ深いかもしれません。
 //---------------------------------------------------------------
 [<Koan(Sort = 12)>]
 module ``about looping`` =
@@ -39,6 +38,6 @@ module ``about looping`` =
 
         AssertEquality sum __
 
-    (* NOTE: While these looping constructs can come in handy from time to time,
-             it's often better to use a more functional approach for looping
-             such as the functions you learned about in the List module. *)
+    (* 注: これらのループ構造が便利な場合もありますが、リストモジュールで
+           学んだ関数のように、より関数的なアプローチを使用してループした
+           方が良いこともよくあります。 *)

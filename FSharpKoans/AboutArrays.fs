@@ -2,9 +2,9 @@
 open FSharpKoans.Core
 
 //---------------------------------------------------------------
-// About Arrays
+// 配列について
 //
-// Like lists, arrays are another basic container type in F#.
+// リストと同様に、配列もF#の基本的なコンテナ型です。
 //---------------------------------------------------------------
 [<Koan(Sort = 11)>]
 module ``about arrays`` =
@@ -23,8 +23,8 @@ module ``about arrays`` =
         let arrayType = fruits.GetType()
         let systemArray = System.Array.CreateInstance(typeof<string>, 0).GetType()
 
-        (* Unlike List, Arrays in F# are the standard .NET arrays that
-           you've used to if you're coming from another .NET language *)
+        (* F#の配列はリストとは異なり、他の.NET言語から来ている人にはおなじみの、
+           標準的な.NETの配列です。 *)
         AssertEquality arrayType systemArray
 
     [<Koan>]
