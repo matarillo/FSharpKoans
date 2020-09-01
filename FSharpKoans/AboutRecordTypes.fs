@@ -7,11 +7,11 @@ type Character = {
 }
 
 //---------------------------------------------------------------
-// About Record Types
+// レコード型について
 //
-// Record types are lightweight ways to construct new types.
-// You can use them to group data in a more structured way than
-// tuples.
+// レコード型は、新しい型を構築するための軽量な方法です。
+// これらを使用して、タプルよりも構造化された方法でデータを
+// グループ化することができます。
 //---------------------------------------------------------------
 [<Koan(Sort = 16)>]
 module ``about record types`` =

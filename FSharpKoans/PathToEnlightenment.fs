@@ -12,15 +12,15 @@ match result with
     printfn ""
     printfn ""
     printfn ""
-    printfn "You have not yet reached enlightenment ..."
+    printfn "悟りを得ていないようじゃな..."
     printfn "%s" ex.Message
     printfn ""
-    printfn "Please meditate on the following code:"
+    printfn "以下のコードに集中なされよ:"
     printfn "%s" ex.StackTrace
     
 printfn ""
 printfn ""
 printfn ""
 printfn ""
-printf "Press any key to continue..."
+printf "何かキーを押すと続行します。"
 System.Console.ReadKey() |> ignore

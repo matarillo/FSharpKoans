@@ -2,25 +2,22 @@
 open FSharpKoans.Core
 
 //---------------------------------------------------------------
-// Apply Your Knowledge!
+// 知識を活かそう!
 //
-// Below is a list containing comma separated data about 
-// Microsoft's stock prices during March of 2012. Without
-// modifying the list, programatically find the day with the
-// greatest difference between the opening and closing prices.
+// 以下は、2012年3月のマイクロソフトの株価に関するカンマ区切りの
+// データを含むリストです。リストを手で修正せずに、始値と終値の差が
+// 最も大きい日をプログラム的に探します。
 //
-// The following functions may be of use:
-// 
-// abs - takes the absolute value of an argument
-// 
-// System.Double.Parse - converts a string argument into a 
-//                       numerical value.
+// 以下の関数が便利です。
 //
-// Hint: Use CultureInfo.InvariantCulture to always parse '.' as 
-// the decimal point.
+// abs - 引数の絶対値を取ります。
 //
-// The following function will convert a comma separated string
-// into an array of the column values.
+// System.Double.Parse - 文字列の引数を数値に変換します。
+//
+// ヒント: CultureInfo.InvariantCulture を使用して、
+//         常に '.' を小数点としてパースします。
+//
+// 次の関数は、カンマ区切りの文字列を列の値の配列に変換します。
 //                       
 // let splitCommas (x:string) =
 //     x.Split([|','|])
@@ -54,9 +51,9 @@ module ``about the stock example`` =
           "2012-03-01,31.93,32.39,31.85,32.29,77344100,32.29";
           "2012-02-29,31.89,32.00,31.61,31.74,59323600,31.74"; ]
     
-    // Feel free to add extra [<Koan>] members here to write
-    // tests for yourself along the way. You can also try 
-    // using the F# Interactive window to check your progress.
+    // 途中でここに [<Koan>] メンバーを自由に追加して、自分のために
+    // テストを書いてみてください。また、進捗状況を確認するために
+    // F# インタラクティブウィンドウを使ってみることもできます。
 
     [<Koan>]
     let YouGotTheAnswerCorrect() =

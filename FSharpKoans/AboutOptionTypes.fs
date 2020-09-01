@@ -8,12 +8,12 @@ type Game = {
 }
 
 //---------------------------------------------------------------
-// About Option Types
+// オプション型について
 //
-// Option Types are used to represent calculations that may or
-// may not return a value. You may be used to using null for this
-// in other languages. However, using option types instead of nulls
-// has subtle but far reaching benefits.
+// オプション型は、値を返す可能性のある、または返さない可能性のある
+// 計算を表すために使用されます。他の言語ではnullを使うことに慣れて
+// いたかもしれません。しかし、null の代わりにオプション型を使用する
+// ことで、微妙ではありますが大きな広がりのあるメリットがあります。
 //---------------------------------------------------------------
 [<Koan(Sort = 17)>]
 module ``about option types`` =
@@ -66,6 +66,6 @@ module ``about option types`` =
             game.Score
             |> Option.map (fun score -> if score > 3 then "play it" else "don't play")
 
-        //HINT: look at the return type of the decide on function
+        //ヒント: decideOn関数の戻り値の型を見てください。
         AssertEquality (decideOn chronoTrigger) __
         AssertEquality (decideOn halo) __

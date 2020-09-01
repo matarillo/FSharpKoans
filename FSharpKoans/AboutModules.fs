@@ -19,11 +19,11 @@ module MushroomKingdom =
         { character with Power = Some Mushroom }
 
 //---------------------------------------------------------------
-// About Modules
+// モジュールについて
 //
-// Modules are used to group functions, values, and types. 
-// They're similar to .NET namespaces, but they have slightly 
-// different semantics as you'll see below.
+// モジュールは、関数や値や型をグループ化するために使用されます。
+// モジュールは .NET の名前空間に似ていますが、以下に示すように、
+// 若干セマンティクスが異なります。
 //---------------------------------------------------------------
 [<Koan(Sort = 19)>]
 module ``about modules`` =
@@ -43,9 +43,8 @@ module ``about modules`` =
 
         AssertEquality superMario.Power __
 
-(* NOTE: In previous sections, you've seen modules like List and Option that 
-         contain useful functions for dealing with List types and Option types
-         respectively. *)
+(* 注: 以前のセクションでは、List 型と Option 型を扱うのに便利な関数を含む
+       List と Option のようなモジュールを見てきました。 *)
 
 open MushroomKingdom
 

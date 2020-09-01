@@ -8,10 +8,10 @@ module NumberFilterer =
         else None
 
 //---------------------------------------------------------------
-// Getting Started with Filtering Lists
+// リストのフィルタリングを始める
 //
-// Lists in F# can be filtered in a number of ways. 
-// This koan looks at:
+// F# のリストはいくつかの方法でフィルタリングすることができます。
+// このKoanでは以下のものが見られます。
 //  - filter
 //  - find / tryFind
 //  - choose
@@ -26,14 +26,14 @@ module ``about filtering`` =
     let FilteringAList() =
         let names = [ "Alice"; "Bob"; "Eve"; ]
                 
-        // Find all the names starting with "A" using an anonymous function
+        // 匿名関数を使って "A" で始まる名前をすべて検索します。
         let actual_names = 
             names
             |> List.filter (fun name -> name.StartsWith( "A" ))
      
         AssertEquality actual_names [ __ ]
 
-        //Or passing a function to filter
+        // もしくは、フィルタする関数を渡します。
         let startsWithTheLetterB (s: string) =
             s.StartsWith("B")
 
@@ -48,13 +48,13 @@ module ``about filtering`` =
         let names = [ "Alice"; "Bob"; "Eve"; ]
         let expected_name = "Bob"
                 
-        // find will return just one item, or throws an exception
+        // findは1つの項目だけを返すか、例外をスローします。
 
         let actual_name = 
             names
             |> List.find (fun name -> name = __ )
             
-        //??? What would happen if there are 2 Bobs in the List?
+        // ??? リストにボブが2人いるとどうなりますか？
 
         AssertEquality expected_name actual_name
 
@@ -62,7 +62,7 @@ module ``about filtering`` =
     let FindingJustOneOrZeroItem() =
         let names = [ "Alice"; "Bob"; "Eve"; ]
                 
-        // tryFind returns an option so you can handle 0 rows returned
+        // tryFindはオプション型を返すので、0行が返されても処理できます。
         let eve = 
             names
             |> List.tryFind (fun name -> name = "Eve" )
@@ -77,39 +77,40 @@ module ``about filtering`` =
     let ChoosingItemsFromAList() =
         let numbers = [ 1; 2; 3; ]
         
-        // choose takes a function that transforms the input into an option
-        // And filters out the results that are None.
+        // choose は、入力をオプション型に変換する関数を取り、
+        // 結果が None のものを除外します。
         let evenNumbers =
             numbers
             |> List.choose someIfEven
 
         AssertEquality evenNumbers  [ __ ]
 
-        //You can also use the "id" function on types of 'a option list 
-        //"id" will return just those that are "Some"
+        // また、'a option list 型に対して "id" 関数を使用することも
+        // できます。"id" は "Some" のものだけを返します。
         let optionNames = [ None; Some "Alice"; None; ]
 
         let namesWithValue = 
             optionNames
             |> List.choose id
 
-        //Notice the type of namesWithValue is 'string list', whereas optionNames is 'string option list'
+        // namesWithValue の型が '文字列のリスト' であるのに対し、
+        // optionNames は '文字列のオプションリスト' であることに注意してください。
         AssertEquality namesWithValue [ __ ]
 
     [<Koan>]
     let PickingItemsFromAList() =
         let numbers = [ 5..10 ]
        
-        //Pick is similar to choose, but returns the first element, or throws an exception if there are no
-        //items that return "Some" (a bit like find does)
+        // pick は choose に似ていますが、"Some" である最初の要素を返すか、
+        // または、そのような項目がない場合に例外をスローします (find と少し似ています)。
         let firstEven =
             numbers
             |> List.pick someIfEven
 
         AssertEquality firstEven __
 
-        //As with choose, you can also use the "id" function on types of 'a option list 
-        //to return just those that are "Some"
+        // chooseと同様に、オプションリストの型に "id"関数を使用して
+        // "Some"であるものだけを返すこともできます。
         let optionNames = [ None; Some "Alice"; None; Some "Bob"; ]
 
         let firstNameWithValue = 
@@ -118,4 +119,4 @@ module ``about filtering`` =
 
         AssertEquality firstNameWithValue  __
 
-        //There is also a tryPick which works like tryFind, returning "None" instead of throwing an exception.
+        // また、tryFind のように動作する tryPick もあり、例外を投げる代わりに "None" を返します。

@@ -12,12 +12,11 @@ type Favorite =
     | Number of int
 
 //---------------------------------------------------------------
-// About Discriminated Unions
+// 判別共用体について
 //
-// Discriminated unions are used to represent data that can be
-// one of a fixed number of cases. To start off, you can think
-// of them like a much more powerful version of enums in other
-// languages.
+// 判別共用体は、決まった数の場合分けのいずれかになり得るデータを
+// 表現するために使用されます。まずは、他の言語でいう列挙型のより
+// 強力なバージョンのようなものと考えてもよいでしょう。
 //---------------------------------------------------------------
 [<Koan(Sort = 18)>]
 module ``about discriminated unions`` =
@@ -35,8 +34,8 @@ module ``about discriminated unions`` =
 
         AssertEquality (toColor choice) __
 
-        (* TRY IT: What happens if you remove a case from the above pattern 
-                   match? *)
+        (* 実験: 上記のパターンマッチから場合分けのケースを削除すると
+                 どうなりますか？ *)
 
     [<Koan>]
     let DiscriminatedUnionCasesCanHaveTypes() =

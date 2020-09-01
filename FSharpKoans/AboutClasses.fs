@@ -2,10 +2,10 @@
 open FSharpKoans.Core
 
 //---------------------------------------------------------------
-// About Classes
+// クラスについて
 //
-// As a full fledged Object Oriented language, F# allows you to
-// create traditional classes to contain data and methods.
+// 本格的なオブジェクト指向言語として、F#ではデータやメソッドを含む
+// 伝統的なクラスを作成することができます。
 //---------------------------------------------------------------
 
 type Zombie() =
@@ -67,8 +67,8 @@ module ``about classes`` =
         let result = zombie.Eat "chicken"
         AssertEquality result __
 
-        (* TRY IT: Can you access the let bound value Zombie2.favoriteFood
-                   outside of the class definition? *)
+        (* 実験: letでバインドされた値 Zombie2.favoriteFood に
+                 クラス定義の外部からアクセスできますか？ *)
 
     [<Koan>]
     let ClassesCanHaveReadWriteProperties() =

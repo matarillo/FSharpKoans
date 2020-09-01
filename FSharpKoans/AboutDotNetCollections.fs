@@ -3,11 +3,11 @@ open FSharpKoans.Core
 open System.Collections.Generic
 
 //---------------------------------------------------------------
-// About .NET Collections
+// .NETのコレクションについて
 //
-// Since F# is built for seamless interop with other CLR 
-// languages, you can use all of the basic .NET collections types
-// you're already familiar with if you're a C# or VB programmer.
+// F#は他のCLR言語とシームレスに相互運用できるように構築されて
+// いるため、C#やVBのプログラマーにはすでにお馴染みの、基本的な
+// .NETのコレクション型をすべて使用することができます。
 //---------------------------------------------------------------
 [<Koan(Sort = 14)>]
 module ``about dot net collections`` =
@@ -44,10 +44,10 @@ module ``about dot net collections`` =
             |> Seq.map (fun kvp -> sprintf "Name: %s - City: %s" kvp.Key kvp.Value)
             |> Seq.toArray
 
-        //NOTE: The seq type in F# is an alias for .NET's IEnumerable interface
-        //      Like the List and Array module, the Seq module contains functions 
-        //      that you can combine to perform operations on types implementing 
-        //      seq/IEnumerable.
+        // 注: F#のseq型は .NETのIEnumerableインターフェースのエイリアスです。
+        //     ListやArrayモジュールのように、Seqモジュールには、seq/IEnumerableを
+        //     実装した型に対する操作を実行するために組み合わせることができる関数が
+        //     含まれています。
 
         AssertEquality verboseBook.[0] __
         AssertEquality verboseBook.[1] __
