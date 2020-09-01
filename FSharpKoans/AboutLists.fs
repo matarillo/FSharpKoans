@@ -3,13 +3,12 @@ open FSharpKoans.Core
 open System.Collections.Generic
 
 //---------------------------------------------------------------
-// About Lists
+// リストについて
 //
-// Lists are important building blocks that you'll use frequently
-// in F# programming. They are used to group arbitrarily large 
-// sequences of values. It's very common to store values in a 
-// list and perform operations across each value in the 
-// list.
+// リストはF#プログラミングで頻繁に使用される重要な構成要素です。
+// リストは、値を多数並べたものをグループ化するために使用されます。
+// リストに値をいくつか格納し、リスト内の各値に対して操作を行うことが
+// たいへんよくあります。
 //---------------------------------------------------------------
 [<Koan(Sort = 9)>]
 module ``about lists`` =
@@ -18,19 +17,19 @@ module ``about lists`` =
     let CreatingLists() =
         let list = ["apple"; "pear"; "grape"; "peach"]
         
-        //Note: The list data type in F# is a singly linked list, 
-        //      so indexing elements is O(n). 
+        (* 注: F#のリストデータ型は単一方向連結リストなので、
+               インデックスによる要素アクセスはO(n)です。 *)
         
         AssertEquality list.Head __
         AssertEquality list.Tail __
         AssertEquality list.Length __
 
-        (* .NET developers coming from other languages may be surprised
-           that F#'s list type is not the same as the base class library's
-           List<T>. In other words, the following assertion is true *)
+        (* 他の言語から来た .NET 開発者は、F# のリスト型が基本クラスライブラリの
+           List<T> と同じではないことに驚くかもしれません。言い換えれば、
+           以下のアサーションは成功します。 *)
 
         let dotNetList = new List<string>()
-        //you don't need to modify the following line
+        // 以下を修正する必要はありません。
         AssertInequality (list.GetType()) (dotNetList.GetType())
 
     [<Koan>]
@@ -39,19 +38,18 @@ module ``about lists`` =
         let second = "pear" :: first
         let third = "apple" :: second
 
-        //Note: "::" is known as "cons"
+        // 注: "::" は "cons" とも呼ばれます。
         
         AssertEquality ["apple"; "pear"; "grape"; "peach"] third
         AssertEquality second __
         AssertEquality first __
 
-        //What happens if you uncomment the following?
+        // 以下のコメントを外すとどうなりますか？
 
         //first.Head <- "apple"
         //first.Tail <- ["peach"; "pear"]
 
-        //THINK ABOUT IT: Can you change the contents of a list once it has been
-        //                created?
+        // 考察: 一度作成したリストの内容を変更することはできますか？
 
 
     [<Koan>]
@@ -62,12 +60,12 @@ module ``about lists`` =
         AssertEquality first __
         AssertEquality second __
 
-    (* THINK ABOUT IT: In general, what performs better for building lists, 
-       :: or @? Why?
+    (* 考察: 一般的に、リストを構築するのに :: と @ ではどちらがより良い
+             パフォーマンスを発揮するでしょうか？ そしてその理由は？
        
-       Hint: There is no way to modify "first" in the above example. It's
-       immutable. With that in mind, what does the @ function have to do in
-       order to append ["peach"] to "first" to create "second"? *)
+       ヒント：上の例では "first" はイミュータブルで、変更することはできません。
+               それを念頭に置いて、"first" に ["peach"] を追加して
+               "second" を作成するために、@ 関数は何をしなければならないでしょうか？ *)
         
     [<Koan>]
     let CreatingListsWithARange() =
@@ -122,6 +120,7 @@ module ``about lists`` =
         AssertEquality result1 __
         AssertEquality result2 __
 
-    (* Note: There are many other useful methods in the List module. Check them
-       via intellisense in Visual Studio by typing '.' after List, or online at
-       http://msdn.microsoft.com/en-us/library/ee353738.aspx *)
+    (* 注: Listモジュールには他にも便利なメソッドがたくさんあります。
+           Visual Studio の Intellisense で List の後に '.' を入力して
+           確認してください。または、オンラインドキュメントを参照してください。
+           https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html *)

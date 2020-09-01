@@ -2,11 +2,10 @@
 open FSharpKoans.Core
 
 //----------------------------------------------------------------
-// About Pipelining
+// パイプラインについて
 //
-// The forward pipe operator is one of the most commonly used
-// symbols in F# programming. You can use it to combine operations
-// on lists and other data structures in a readable way.
+// 前方パイプ演算子は、F#プログラミングで最もよく使われる記号の一つです。
+// リストや他のデータ構造に対する操作を読みやすく組み合わせるために使用できます。
 //----------------------------------------------------------------
 [<Koan(Sort = 10)>]
 module ``about pipelining`` =
@@ -19,8 +18,8 @@ module ``about pipelining`` =
 
     [<Koan>]
     let SquareEvenNumbersWithSeparateStatements() =
-        (* One way to combine the operations is by using separate statements.
-           However, this can be clumsy since you have to name each result. *)
+        (* 操作を組み合わせる一つの方法は、別々のステートメントを使用することです。
+           しかし、それぞれの結果に名前を付けなければならないので、ぎこちないものになります。*)
 
         let numbers = [0..5]
 
@@ -31,9 +30,9 @@ module ``about pipelining`` =
 
     [<Koan>]
     let SquareEvenNumbersWithParens() =
-        (* You can avoid this problem by using parens to pass the result of one
-           function to another. This can be difficult to read since you have to 
-           start from the innermost function and work your way out. *)
+        (* この問題は、ある関数の結果を別の関数に渡すためにカッコを使用することで
+           回避できます。これを読むには、最も内側にある関数から読み始めて、外側に
+           移動していかなければならないので、読みにくいかもしれません。 *)
 
         let numbers = [0..5]
 
@@ -43,8 +42,8 @@ module ``about pipelining`` =
 
     [<Koan>]
     let SquareEvenNumbersWithPipelineOperator() =
-        (* In F#, you can use the pipeline operator to get the benefit of the 
-           parens style with the readablity of the statement style. *)
+        (* F#では、パイプライン演算子を使用することで、カッコ方式の利点と
+           ステートメント方式の読みやすさを得ることができます。 *)
 
         let result =
             [0..5]

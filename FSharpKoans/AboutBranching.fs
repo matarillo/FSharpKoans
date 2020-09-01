@@ -2,10 +2,10 @@
 open FSharpKoans.Core
 
 //---------------------------------------------------------------
-// About Branching
+// 条件分岐について
 //
-// Branching is used to tell a program to conditionally perform
-// an operation. It's another fundamental part of F#.
+// 条件分岐は、プログラムに条件付きで操作を行うように指示するために使用されます。
+// これもF#の基本的な部分です。
 //---------------------------------------------------------------
 [<Koan(Sort = 8)>]
 module ``about branching`` =
@@ -24,9 +24,8 @@ module ``about branching`` =
     [<Koan>]
     let IfStatementsReturnValues() =
     
-        (* In languages like C#, if statements do not yield results; they can 
-           only cause side effects. If statements in F# return values due to 
-           F#'s functional programming roots. *)
+        (* C# のような言語では、if 文は結果を返さず、副作用を引き起こすだけです。
+           F# の if 文は、F# のルーツが関数型プログラミングにあるため、値を返します。 *)
            
         let result = 
             if 2 = 3 then

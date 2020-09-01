@@ -50,14 +50,14 @@ module ``about let`` =
     let FloatsAndInts() =
         (* 予備知識にもよりますが、F#では整数と浮動小数点数は
            別の型であることを知って驚くかもしれません。
-           つまり、以下のようになります。 *)
+           言い換えれば、以下のアサーションは成功します。 *)
         let x = 20
         let typeOfX = x.GetType()
 
         let y = 20.0
         let typeOfY = y.GetType()
 
-        // これらを修正する必要はありません。
+        // 以下を修正する必要はありません。
         AssertEquality typeOfX typeof<int>
         AssertEquality typeOfY typeof<float>
 
