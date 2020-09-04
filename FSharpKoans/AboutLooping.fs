@@ -9,9 +9,9 @@ open FSharpKoans.Core
 // できます。そちらの方がなじみ深いかもしれません。
 //---------------------------------------------------------------
 [<Koan(Sort = 12)>]
-module ``about looping`` =
+module ``ループについて`` =
     [<Koan>]
-    let LoopingOverAList() =
+    let ``リストをループ処理する``() =
         let values = [0..10]
 
         let mutable sum = 0
@@ -21,7 +21,7 @@ module ``about looping`` =
         AssertEquality sum __
        
     [<Koan>]
-    let LoopingWithExpressions() =
+    let ``for...to式でループする``() =
         let mutable sum = 0
 
         for i = 1 to 5 do
@@ -30,7 +30,7 @@ module ``about looping`` =
         AssertEquality sum __
 
     [<Koan>]
-    let LoopingWithWhile() =
+    let ``whileでループする``() =
         let mutable sum = 1
 
         while sum < 10 do

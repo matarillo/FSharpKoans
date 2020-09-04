@@ -14,17 +14,17 @@ type Character = {
 // グループ化することができます。
 //---------------------------------------------------------------
 [<Koan(Sort = 16)>]
-module ``about record types`` =
+module ``レコード型について`` =
 
     [<Koan>]
-    let RecordsHaveProperties() =
+    let ``レコードはプロパティを持つ``() =
         let mario = { Name = "Mario"; Occupation = "Plumber"; }
 
         AssertEquality mario.Name __
         AssertEquality mario.Occupation __
 
     [<Koan>]
-    let CreatingFromAnExistingRecord() =
+    let ``既存のレコードから新しいレコードを作る``() =
         let mario = { Name = "Mario"; Occupation = "Plumber"; }
         let luigi = { mario with Name = "Luigi"; }
 
@@ -35,7 +35,7 @@ module ``about record types`` =
         AssertEquality luigi.Occupation __
 
     [<Koan>]
-    let ComparingRecords() =
+    let ``レコードを比較する``() =
         let greenKoopa = { Name = "Koopa"; Occupation = "Soldier"; }
         let bowser = { Name = "Bowser"; Occupation = "Kidnapper"; }
         let redKoopa = { Name = "Koopa"; Occupation = "Soldier"; }
@@ -56,7 +56,7 @@ module ``about record types`` =
         AssertEquality bowserComparison __
 
     [<Koan>]
-    let YouCanPatternMatchAgainstRecords() =
+    let ``レコードに対してパターンマッチできる``() =
         let mario = { Name = "Mario"; Occupation = "Plumber"; }
         let luigi = { Name = "Luigi"; Occupation = "Plumber"; }
         let bowser = { Name = "Bowser"; Occupation = "Kidnapper"; }

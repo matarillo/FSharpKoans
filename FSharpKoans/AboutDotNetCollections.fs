@@ -10,10 +10,10 @@ open System.Collections.Generic
 // .NETのコレクション型をすべて使用することができます。
 //---------------------------------------------------------------
 [<Koan(Sort = 14)>]
-module ``about dot net collections`` =
+module ``DotNETのコレクションについて`` =
 
     [<Koan>]
-    let CreatingDotNetLists() =
+    let ``.NETのリストを作る``() =
         let fruits = new List<string>()
 
         fruits.Add("apple")
@@ -23,7 +23,7 @@ module ``about dot net collections`` =
         AssertEquality fruits.[1] __
 
     [<Koan>]
-    let CreatingDotNetDictionaries() =
+    let ``.NETのディクショナリーを作る``() =
         let addressBook = new Dictionary<string, string>()
 
         addressBook.["Chris"] <- "Ann Arbor"
@@ -33,7 +33,7 @@ module ``about dot net collections`` =
         AssertEquality addressBook.["SkillsMatter"] __
 
     [<Koan>]
-    let YouUseCombinatorsWithDotNetTypes() =
+    let ``.NETの型に対してコンビネーターを使う``() =
         let addressBook = new Dictionary<string, string>()
 
         addressBook.["Chris"] <- "Ann Arbor"
@@ -53,14 +53,14 @@ module ``about dot net collections`` =
         AssertEquality verboseBook.[1] __
 
     [<Koan>]
-    let SkippingElements() =
+    let ``要素をスキップする``() =
         let original = [0..5]
         let result = Seq.skip 2 original
         
         AssertEquality result __
 
     [<Koan>]
-    let FindingTheMax() =
+    let ``最大値を見つける``() =
         let values = new List<int>()
 
         values.Add(11)
@@ -74,7 +74,7 @@ module ``about dot net collections`` =
         AssertEquality result __
     
     [<Koan>]
-    let FindingTheMaxUsingACondition() =
+    let ``条件を指定して最大値を見つける``() =
         let getNameLength (name:string) =
             name.Length
         

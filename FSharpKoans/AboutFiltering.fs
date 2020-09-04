@@ -19,11 +19,11 @@ module NumberFilterer =
 //---------------------------------------------------------------
 
 [<Koan(Sort = 22)>]
-module ``about filtering`` =
+module ``フィルタリングについて`` =
     open NumberFilterer
 
     [<Koan>]
-    let FilteringAList() =
+    let ``リストをフィルタリングする``() =
         let names = [ "Alice"; "Bob"; "Eve"; ]
                 
         // 匿名関数を使って "A" で始まる名前をすべて検索します。
@@ -44,7 +44,7 @@ module ``about filtering`` =
         AssertEquality namesBeginningWithB [ __ ]
 
     [<Koan>]
-    let FindingJustOneItem() =
+    let ``唯一の要素を見つける``() =
         let names = [ "Alice"; "Bob"; "Eve"; ]
         let expected_name = "Bob"
                 
@@ -59,7 +59,7 @@ module ``about filtering`` =
         AssertEquality expected_name actual_name
 
     [<Koan>]
-    let FindingJustOneOrZeroItem() =
+    let ``唯一の要素を見つけるか何も見つからないかのどちらか``() =
         let names = [ "Alice"; "Bob"; "Eve"; ]
                 
         // tryFindはオプション型を返すので、0行が返されても処理できます。
@@ -74,7 +74,7 @@ module ``about filtering`` =
         AssertEquality zelda.IsSome __
 
     [<Koan>]
-    let ChoosingItemsFromAList() =
+    let ``リストの要素で値を持たないものを捨てる``() =
         let numbers = [ 1; 2; 3; ]
         
         // choose は、入力をオプション型に変換する関数を取り、
@@ -98,7 +98,7 @@ module ``about filtering`` =
         AssertEquality namesWithValue [ __ ]
 
     [<Koan>]
-    let PickingItemsFromAList() =
+    let ``リストの要素で値を持つものを見つける``() =
         let numbers = [ 5..10 ]
        
         // pick は choose に似ていますが、"Some" である最初の要素を返すか、

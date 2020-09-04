@@ -37,23 +37,23 @@ type Person2(name:string) =
         "Hi my name is " + this.Name
 
 [<Koan(Sort = 21)>]
-module ``about classes`` =
+module ``クラスについて`` =
 
     [<Koan>]
-    let ClassesCanHaveProperties() =
+    let ``クラスはプロパティを持てる``() =
         let zombie = new Zombie()
 
         AssertEquality zombie.FavoriteFood __
 
     [<Koan>]
-    let ClassesCanHaveMethods() =
+    let ``クラスはメソッドを持てる``() =
         let zombie = new Zombie()
 
         let result = zombie.Eat "brains"
         AssertEquality result __
     
     [<Koan>]
-    let ClassesCanHaveConstructors() =
+    let ``クラスはコンストラクタを持てる``() =
     
         let person = new Person("Shaun")
 
@@ -61,7 +61,7 @@ module ``about classes`` =
         AssertEquality result __
 
     [<Koan>]
-    let ClassesCanHaveLetBindingsInsideThem() =
+    let ``クラスは内部にletバインディングを持てる``() =
         let zombie = new Zombie2()
 
         let result = zombie.Eat "chicken"
@@ -71,7 +71,7 @@ module ``about classes`` =
                  クラス定義の外部からアクセスできますか？ *)
 
     [<Koan>]
-    let ClassesCanHaveReadWriteProperties() =
+    let ``クラスは読み書き可能プロパティを持てる``() =
         let person = new Person2("Shaun")
 
         let firstPhrase = person.Speak()

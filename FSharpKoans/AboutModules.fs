@@ -26,10 +26,10 @@ module MushroomKingdom =
 // 若干セマンティクスが異なります。
 //---------------------------------------------------------------
 [<Koan(Sort = 19)>]
-module ``about modules`` =
+module ``モジュールについて`` =
 
     [<Koan>]
-    let ModulesCanContainValuesAndTypes() =
+    let ``ModulesCanContainValuesAndTypes``() =
 
         AssertEquality MushroomKingdom.Mario.Name __
         AssertEquality MushroomKingdom.Mario.Occupation __
@@ -38,7 +38,7 @@ module ``about modules`` =
         AssertEquality moduleType typeof<FILL_ME_IN>
 
     [<Koan>]
-    let ModulesCanContainFunctions() =
+    let ``ModulesCanContainFunctions``() =
         let superMario = MushroomKingdom.powerUp MushroomKingdom.Mario
 
         AssertEquality superMario.Power __
@@ -49,9 +49,9 @@ module ``about modules`` =
 open MushroomKingdom
 
 [<Koan(Sort = 20)>]
-module ``about opened modules`` =
+module ``開かれたモジュールについて`` =
     [<Koan>]
-    let OpenedModulesBringTheirContentsInScope() = 
+    let ``モジュールを開くと内容をスコープ内に展開できる``() = 
         AssertEquality Mario.Name __
         AssertEquality Mario.Occupation __
         AssertEquality Mario.Power __

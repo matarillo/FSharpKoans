@@ -19,9 +19,9 @@ type Favorite =
 // 強力なバージョンのようなものと考えてもよいでしょう。
 //---------------------------------------------------------------
 [<Koan(Sort = 18)>]
-module ``about discriminated unions`` =
+module ``判別共用体について`` =
     [<Koan>]
-    let DiscriminatedUnionsCaptureASetOfOptions() =
+    let ``判別共用体は選択肢の集合をまとめられる``() =
 
         let toColor condiment = 
             match condiment with
@@ -38,7 +38,7 @@ module ``about discriminated unions`` =
                  どうなりますか？ *)
 
     [<Koan>]
-    let DiscriminatedUnionCasesCanHaveTypes() =
+    let ``判別共用体のそれぞれの値は別の型の値をラップできる``() =
 
         let saySomethingAboutYourFavorite favorite =
             match favorite with

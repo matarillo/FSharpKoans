@@ -16,10 +16,10 @@ type Game = {
 // ことで、微妙ではありますが大きな広がりのあるメリットがあります。
 //---------------------------------------------------------------
 [<Koan(Sort = 17)>]
-module ``about option types`` =
+module ``オプション型について`` =
 
     [<Koan>]
-    let OptionTypesMightContainAValue() =
+    let ``オプション型は値を持つかもしれない``() =
         let someValue = Some 10
         
         AssertEquality someValue.IsSome __
@@ -27,7 +27,7 @@ module ``about option types`` =
         AssertEquality someValue.Value __
 
     [<Koan>]
-    let OrTheyMightNot() =
+    let ``値を持たないかもしれない``() =
         let noValue = None
 
         AssertEquality noValue.IsSome __
@@ -35,7 +35,7 @@ module ``about option types`` =
         AssertThrows<FILL_IN_THE_EXCEPTION> (fun () -> noValue.Value)
 
     [<Koan>]
-    let UsingOptionTypesWithPatternMatching() =
+    let ``パターンマッチでオプション型を使う``() =
         let chronoTrigger = { Name = "Chrono Trigger"; Platform = "SNES"; Score = Some 5 }
         let halo = { Name = "Halo"; Platform = "Xbox"; Score = None }
 
@@ -57,7 +57,7 @@ module ``about option types`` =
         AssertEquality (getScore halo) __
 
     [<Koan>]
-    let ProjectingValuesFromOptionTypes() =
+    let ``オプション型の値を射影する``() =
         let chronoTrigger = { Name = "Chrono Trigger"; Platform = "SNES"; Score = Some 5 }
         let halo = { Name = "Halo"; Platform = "Xbox"; Score = None }
 

@@ -23,7 +23,7 @@ open FSharpKoans.Core
 //     x.Split([|','|])
 //---------------------------------------------------------------
 [<Koan(Sort = 15)>]
-module ``about the stock example`` =
+module ``株価の例題について`` =
     
     let stockData =
         [ "Date,Open,High,Low,Close,Volume,Adj Close";
@@ -56,7 +56,7 @@ module ``about the stock example`` =
     // F# インタラクティブウィンドウを使ってみることもできます。
 
     [<Koan>]
-    let YouGotTheAnswerCorrect() =
+    let ``答えは正しいものとして、同じ答えになる関数を書く``() =
         let result =  __
         
         AssertEquality "2012-03-13" result

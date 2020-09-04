@@ -8,10 +8,10 @@ open FSharpKoans.Core
 // F#は関数型言語なので、学ぶべきコツはまだまだありますよ！
 //---------------------------------------------------------------
 [<Koan(Sort = 13)>]
-module ``more about functions`` =
+module ``関数について、続き`` =
     
     [<Koan>]
-    let DefiningLambdas() =
+    let ``ラムダを定義する``() =
         
         let colors = ["maize"; "blue"]
 
@@ -26,7 +26,7 @@ module ``more about functions`` =
            ラムダ関数として知られています。 *)
 
     [<Koan>]
-    let FunctionsThatReturnFunctions() =
+    let ``関数を返す関数を作る``() =
         (* 関数プログラミングの巧妙な技法の一つは、別の関数を返す関数を作成
            することです。これは、いくつかの興味深い動作をもたらします。 *)
         let add x =
@@ -47,7 +47,7 @@ module ``more about functions`` =
         // 注：このスタイルで書かれた関数はカリー化されていると言われます。
 
     [<Koan>]
-    let AutomaticCurrying() =
+    let ``自動カリー化を知る``() =
         (* 上記のテクニックは、F#が実際にデフォルトでサポートしているほど
            一般的なものです。言い換えれば、関数は自動的にカリー化されます。 *)
         let add x y = 
@@ -61,7 +61,7 @@ module ``more about functions`` =
         AssertEquality luckyNumber __
 
     [<Koan>]
-    let NonCurriedFunctions() =
+    let ``カリー化されていない関数を作る``() =
         (* ほとんどの場合、自動でカリー化される関数の構文にこだわるべきです。
            ですが、C#のようにカリー化があまり一般的ではない言語からでも
            使いやすいように、カリー化されていない形式で関数を書くこともできます。 *)
