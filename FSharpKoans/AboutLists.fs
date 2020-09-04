@@ -11,10 +11,10 @@ open System.Collections.Generic
 // たいへんよくあります。
 //---------------------------------------------------------------
 [<Koan(Sort = 9)>]
-module ``about lists`` =
+module ``リストについて`` =
 
     [<Koan>]
-    let CreatingLists() =
+    let ``リストを作る``() =
         let list = ["apple"; "pear"; "grape"; "peach"]
         
         (* 注: F#のリストデータ型は単一方向連結リストなので、
@@ -33,7 +33,7 @@ module ``about lists`` =
         AssertInequality (list.GetType()) (dotNetList.GetType())
 
     [<Koan>]
-    let BuildingNewLists() =
+    let ``新しいリストを構築する``() =
         let first = ["grape"; "peach"]
         let second = "pear" :: first
         let third = "apple" :: second
@@ -53,7 +53,7 @@ module ``about lists`` =
 
 
     [<Koan>]
-    let ConcatenatingLists() =
+    let ``リストを結合する``() =
         let first = ["apple"; "pear"; "grape"]
         let second = first @ ["peach"]
 
@@ -68,27 +68,27 @@ module ``about lists`` =
                "second" を作成するために、@ 関数は何をしなければならないでしょうか？ *)
         
     [<Koan>]
-    let CreatingListsWithARange() =
+    let ``範囲演算子でリストを作る``() =
         let list = [0..4]
         
         AssertEquality list.Head __
         AssertEquality list.Tail __
         
     [<Koan>]
-    let CreatingListsWithComprehensions() =
+    let ``内包表記でリストを作る``() =
         let list = [for i in 0..4 do yield i ]
                             
         AssertEquality list __
     
     [<Koan>]
-    let ComprehensionsWithConditions() =
+    let ``条件をともなう内包表記を使う``() =
         let list = [for i in 0..10 do 
                         if i % 2 = 0 then yield i ]
                             
         AssertEquality list __
 
     [<Koan>]
-    let TransformingListsWithMap() =
+    let ``mapでリストを変換する``() =
         let square x =
             x * x
 
@@ -99,7 +99,7 @@ module ``about lists`` =
         AssertEquality result __
 
     [<Koan>]
-    let FilteringListsWithFilter() =
+    let ``filterでリストをフィルタリングする``() =
         let isEven x =
             x % 2 = 0
 
@@ -110,7 +110,7 @@ module ``about lists`` =
         AssertEquality result __
 
     [<Koan>]
-    let DividingListsWithPartition() =
+    let ``partitionでリストを分割する``() =
         let isOdd x =
             x % 2 <> 0
 

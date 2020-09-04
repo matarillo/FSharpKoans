@@ -8,7 +8,7 @@ open FSharpKoans.Core
 // リストや他のデータ構造に対する操作を読みやすく組み合わせるために使用できます。
 //----------------------------------------------------------------
 [<Koan(Sort = 10)>]
-module ``about pipelining`` =
+module ``パイプラインについて`` =
 
     let square x =
         x * x
@@ -17,9 +17,9 @@ module ``about pipelining`` =
         x % 2 = 0
 
     [<Koan>]
-    let SquareEvenNumbersWithSeparateStatements() =
+    let ``ステートメントを分けて偶数を二乗する``() =
         (* 操作を組み合わせる一つの方法は、別々のステートメントを使用することです。
-           しかし、それぞれの結果に名前を付けなければならないので、ぎこちないものになります。*)
+           しかし、それぞれの結果に名前を付けなければならないので、不格好になります。*)
 
         let numbers = [0..5]
 
@@ -29,10 +29,10 @@ module ``about pipelining`` =
         AssertEquality result __
 
     [<Koan>]
-    let SquareEvenNumbersWithParens() =
+    let ``カッコを使って偶数を二乗する``() =
         (* この問題は、ある関数の結果を別の関数に渡すためにカッコを使用することで
-           回避できます。これを読むには、最も内側にある関数から読み始めて、外側に
-           移動していかなければならないので、読みにくいかもしれません。 *)
+           回避できます。ただ、これを読むには、最も内側にある関数から読み始めて、
+           外側に移動していかなければならないので、読みにくいかもしれません。 *)
 
         let numbers = [0..5]
 
@@ -41,7 +41,7 @@ module ``about pipelining`` =
         AssertEquality result __
 
     [<Koan>]
-    let SquareEvenNumbersWithPipelineOperator() =
+    let ``パイプライン演算子を使って偶数を二乗する``() =
         (* F#では、パイプライン演算子を使用することで、カッコ方式の利点と
            ステートメント方式の読みやすさを得ることができます。 *)
 
@@ -53,7 +53,7 @@ module ``about pipelining`` =
         AssertEquality result __
 
     [<Koan>]
-    let HowThePipeOperatorIsDefined() =
+    let ``パイプ演算子の定義を知る``() =
         let (|>) x f =
             f x
 

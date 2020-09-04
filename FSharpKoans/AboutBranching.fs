@@ -49,7 +49,7 @@ module ``条件分岐について`` =
         AssertEquality result2 __
     
     [<Koan>]
-    let ``タプルをif文で扱うとややこしくなる``() =
+    let ``タプルをif文で扱うと不格好になる``() =
         
         let getDinner x = 
             let name, foodChoice = x

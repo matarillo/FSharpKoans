@@ -7,9 +7,9 @@ open FSharpKoans.Core
 // リストと同様に、配列もF#の基本的なコンテナ型です。
 //---------------------------------------------------------------
 [<Koan(Sort = 11)>]
-module ``about arrays`` =
+module ``配列について`` =
     [<Koan>]
-    let CreatingArrays() =
+    let ``配列を作る``() =
         let fruits = [| "apple"; "pear"; "peach"|]
 
         AssertEquality fruits.[0] __
@@ -17,7 +17,7 @@ module ``about arrays`` =
         AssertEquality fruits.[2] __
 
     [<Koan>]
-    let ArraysAreDotNetArrays() =
+    let ``配列は.NETの配列と同じである``() =
         let fruits = [| "apple"; "pear" |]
 
         let arrayType = fruits.GetType()
@@ -28,14 +28,14 @@ module ``about arrays`` =
         AssertEquality arrayType systemArray
 
     [<Koan>]
-    let ArraysAreMutable() =
+    let ``配列はミュータブルである``() =
         let fruits = [| "apple"; "pear" |]
         fruits.[1] <- "peach"
 
         AssertEquality fruits __
 
     [<Koan>]
-    let YouCanCreateArraysWithComprehensions() =
+    let ``内包表記で配列を作ることもできる``() =
         let numbers = 
             [| for i in 0..10 do 
                    if i % 2 = 0 then yield i |]
@@ -43,7 +43,7 @@ module ``about arrays`` =
         AssertEquality numbers __
 
     [<Koan>]
-    let ThereAreAlsoSomeOperationsYouCanPerformOnArrays() =
+    let ``配列に適用できる操作はほかにもある``() =
         let cube x =
             x * x * x
 

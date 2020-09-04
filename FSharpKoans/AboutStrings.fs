@@ -58,7 +58,7 @@ module ``文字列について`` =
         AssertEquality message __
 
     [<Koan>]
-    let ``複数行をそのまま扱う``() =
+    let ``複数行をそのまま使う``() =
         let message = "This
                         is
                         on
