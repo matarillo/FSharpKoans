@@ -9,10 +9,10 @@ open Microsoft.FSharp.Reflection
 // 他の言語ではvoidに似ていますが、F#ではunitは実際の型と考えられています。
 //---------------------------------------------------------------
 [<Koan(Sort = 5)>]
-module ``about unit`` =
+module ``unitについて`` =
 
     [<Koan>]
-    let UnitIsUsedWhenThereIsNoReturnValueForAFunction() =
+    let ``関数に戻り値がない時にunitが使われる``() =
         let sendData data =
             // ...サーバーにデータを送信するコード...
             ()
@@ -22,7 +22,7 @@ module ``about unit`` =
                                また、"()"の値が "null"と表示される場合があることにも注意してください。 *)
 
     [<Koan>]
-    let ParameterlessFunctionsTakeUnitAsTheirArgument() =
+    let ``引数を持たない関数は代わりにunitを受け取る``() =
         let sayHello() =
             "hello"
 

@@ -8,10 +8,10 @@ open FSharpKoans.Core
 // これもF#の基本的な部分です。
 //---------------------------------------------------------------
 [<Koan(Sort = 8)>]
-module ``about branching`` =
+module ``条件分岐について`` =
     
     [<Koan>]
-    let BasicBranching() =
+    let ``基本的な条件分岐を使う``() =
         let isEven x =
             if x % 2 = 0 then
                 "it's even!"
@@ -22,7 +22,7 @@ module ``about branching`` =
         AssertEquality result __
     
     [<Koan>]
-    let IfStatementsReturnValues() =
+    let ``if文は値を返す``() =
     
         (* C# のような言語では、if 文は結果を返さず、副作用を引き起こすだけです。
            F# の if 文は、F# のルーツが関数型プログラミングにあるため、値を返します。 *)
@@ -36,7 +36,7 @@ module ``about branching`` =
         AssertEquality result __
 
     [<Koan>]
-    let BranchingWithAPatternMatch() =
+    let ``パターンマッチで分岐する``() =
         let isApple x =
             match x with
             | "apple" -> true
@@ -49,7 +49,7 @@ module ``about branching`` =
         AssertEquality result2 __
     
     [<Koan>]
-    let UsingTuplesWithIfStatementsQuicklyBecomesClumsy() =
+    let ``タプルをif文で扱うとややこしくなる``() =
         
         let getDinner x = 
             let name, foodChoice = x
@@ -67,7 +67,7 @@ module ``about branching`` =
         AssertEquality (getDinner person2) __
         
     [<Koan>]
-    let PatternMatchingIsNicer() =
+    let ``タプルはパターンマッチで分岐した方がわかりやすい``() =
     
         let getDinner x =
             match x with

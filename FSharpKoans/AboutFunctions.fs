@@ -8,7 +8,7 @@ open FSharpKoans.Core
 // 次は let キーワードを使って関数を作る方法を学びます。
 //---------------------------------------------------------------
 [<Koan(Sort = 3)>]
-module ``about functions`` =
+module ``関数について`` =
 
     (* デフォルトでは、F#は空白に意味があります。
        関数の場合は、関数の最後の行が戻り値であり、
@@ -18,7 +18,7 @@ module ``about functions`` =
         x + y
 
     [<Koan>]
-    let CreatingFunctionsWithLet() =
+    let ``Letで関数を作成する``() =
         let result1 = add 2 2
         let result2 = add 5 2
         
@@ -26,7 +26,7 @@ module ``about functions`` =
         AssertEquality result2 __
 
     [<Koan>]
-    let NestingFunctions() =
+    let ``関数を入れ子にする``() =
         let quadruple x =    
             let double x =
                 x * 2
@@ -37,7 +37,7 @@ module ``about functions`` =
         AssertEquality result __
 
     [<Koan>]
-    let AddingTypeAnnotations() =
+    let ``型注釈を追加する``() =
 
         (* 時には、F# の型推論システムを
            明示的な型注釈で支援しなければならない場合があります。 *)
@@ -51,7 +51,7 @@ module ``about functions`` =
         // 実験: text の型注釈を削除するとどうなりますか？
 
     [<Koan>]
-    let VariablesInTheParentScopeCanBeAccessed() =
+    let ``親スコープの変数にはアクセスできる``() =
         let suffix = "!!!"
 
         let caffeinate (text:string) =

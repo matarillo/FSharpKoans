@@ -8,10 +8,10 @@ open FSharpKoans.Core
 // F#には、これを実現するためのメカニズムがいくつかあります。
 //---------------------------------------------------------------
 [<Koan(Sort = 4)>]
-module ``about the order of evaluation`` =
+module ``評価の順番について`` =
 
     [<Koan>]
-    let SometimesYouNeedParenthesisToGroupThings() =
+    let ``時にはカッコでグループ化する必要がある``() =
         let add x y =
             x + y
 
@@ -22,7 +22,7 @@ module ``about the order of evaluation`` =
         (* 実験: カッコを外すとどうなりますか？*)
 
     [<Koan>]
-    let TheBackwardPipeOperatorCanAlsoHelpWithGrouping() =
+    let ``後方パイプ演算子でグループ化できる場合もある``() =
         let add x y =
             x + y
 

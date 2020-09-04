@@ -9,10 +9,10 @@ open FSharpKoans.Core
 // よく知っておきましょう。
 //---------------------------------------------------------------
 [<Koan(Sort = 2)>]
-module ``about let`` =
+module ``Letについて`` =
 
     [<Koan>]
-    let LetBindsANameToAValue() =
+    let ``Letで名前を値にバインドする``() =
         let x = 50
         
         AssertEquality x __
@@ -21,7 +21,7 @@ module ``about let`` =
        テキスト値の場合は "string"、真偽値の場合は "bool" のような
        型を持っていると推論されます。 *)
     [<Koan>]
-    let LetInfersTheTypesOfValuesWherePossible() =
+    let ``Letは値の型をできる限り推論する``() =
         let x = 50
         let typeOfX = x.GetType()
         AssertEquality typeOfX typeof<int>
@@ -31,7 +31,7 @@ module ``about let`` =
         AssertEquality expectedType typeof<FILL_ME_IN>
 
     [<Koan>]
-    let YouCanMakeTypesExplicit() =
+    let ``明示的に型を指定してもよい``() =
         let (x:int) = 42
         let typeOfX = x.GetType()
 
@@ -47,7 +47,7 @@ module ``about let`` =
            他の文脈でも便利に使うことができます。 *)
     
     [<Koan>]
-    let FloatsAndInts() =
+    let ``浮動小数点数と整数``() =
         (* 予備知識にもよりますが、F#では整数と浮動小数点数は
            別の型であることを知って驚くかもしれません。
            言い換えれば、以下のアサーションは成功します。 *)
@@ -65,14 +65,14 @@ module ``about let`` =
         // floatはdouble型のことを表すF#のスラングです。
 
     [<Koan>]
-    let ModifyingTheValueOfVariables() =
+    let ``変数の値を更新する``() =
         let mutable x = 100
         x <- 200
 
         AssertEquality x __
 
     [<Koan>]
-    let YouCannotModifyALetBoundValueIfItIsNotMutable() =
+    let ``Letでバインドされた値はミュータブルでなければ更新できない``() =
         let x = 50
         
         // 以下のコメントを外すとどうなりますか？

@@ -8,22 +8,22 @@ open FSharpKoans.Core
 // F#も同様です。
 //---------------------------------------------------------------
 [<Koan(Sort = 7)>]
-module ``about strings`` =
+module ``文字列について`` =
 
     [<Koan>]
-    let StringValue() =
+    let ``文字列値を使う``() =
         let message = "hello"
 
         AssertEquality message __
 
     [<Koan>]
-    let StringConcatValue() =
+    let ``文字列値を結合する``() =
         let message = "hello " + "world"
 
         AssertEquality message __
 
     [<Koan>]
-    let FormattingStringValues() =
+    let ``文字列値をフォーマットする``() =
         let message = sprintf "F# turns it to %d!" 11
 
         AssertEquality message __
@@ -33,13 +33,13 @@ module ``about strings`` =
         // 実験: 11を数字以外のものに変えるとどうなりますか？
 
     [<Koan>]
-    let FormattingOtherTypes() =
+    let ``他の型をフォーマットする``() =
         let message = sprintf "hello %s" "world"
 
         AssertEquality message __
 
     [<Koan>]
-    let FormattingAnything() =
+    let ``なんでもフォーマットする``() =
         let message = sprintf "Formatting other types is as easy as: %A" (1, 2, 3)
 
         AssertEquality message __
@@ -48,7 +48,7 @@ module ``about strings`` =
            https://docs.microsoft.com/ja-jp/dotnet/fsharp/language-reference/plaintext-formatting *)
 
     [<Koan>]
-    let CombineMultiline() =
+    let ``複数行を結合する``() =
         let message = "super\
                         cali\
                         fragilistic\
@@ -58,7 +58,7 @@ module ``about strings`` =
         AssertEquality message __
 
     [<Koan>]
-    let Multiline() =
+    let ``複数行をそのまま扱う``() =
         let message = "This
                         is
                         on
@@ -69,7 +69,7 @@ module ``about strings`` =
               message __
 
     [<Koan>]
-    let ExtractValues() =
+    let ``文字型の値を取り出す``() =
         let message = "hello world"
 
         let first = message.[0]
@@ -82,7 +82,7 @@ module ``about strings`` =
         AssertEquality other __
 
     [<Koan>]
-    let ApplyWhatYouLearned() =
+    let ``学んだことを応用する``() =
         (* 今まで学んだことを応用する時が来ました。
            アサートが通るように下の関数を記述します。 *)
         let getFunFacts x =

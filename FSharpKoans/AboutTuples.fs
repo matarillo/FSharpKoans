@@ -8,16 +8,16 @@ open FSharpKoans.Core
 // タプルはF#言語の基本的な構成要素の一つです。
 //---------------------------------------------------------------
 [<Koan(Sort = 6)>]
-module ``about tuples`` =
+module ``タプルについて`` =
     
     [<Koan>]
-    let CreatingTuples() =
+    let ``タプルを作成する``() =
         let items = ("apple", "dog")
         
         AssertEquality items ("apple", __)
         
     [<Koan>]
-    let AccessingTupleElements() =
+    let ``タプルの要素にアクセスする``() =
         let items = ("apple", "dog")
         
         let fruit = fst items
@@ -27,7 +27,7 @@ module ``about tuples`` =
         AssertEquality animal __
 
     [<Koan>]
-    let AccessingTupleElementsWithPatternMatching() =
+    let ``タプルの要素にパターンマッチングでアクセスする``() =
 
         (* fstとsndは状況によっては便利ですが、2つの要素を含むタプルでしか
            動作しません。通常は、タプルの値にアクセスするには
@@ -46,7 +46,7 @@ module ``about tuples`` =
         AssertEquality car __
         
     [<Koan>]
-    let IgnoringValuesWithPatternMatching() =
+    let ``パターンマッチで値を無視する``() =
         let items = ("apple", "dog", "Mustang")
         
         let _, animal, _ = items
@@ -57,7 +57,7 @@ module ``about tuples`` =
              これについては後でまた考察します。 *)
         
     [<Koan>]
-    let ReturningMultipleValuesFromAFunction() =
+    let ``関数から多値を返す``() =
         let squareAndCube x =
             (x ** 2.0, x ** 3.0)
         
@@ -71,7 +71,7 @@ module ``about tuples`` =
              squareAndCube関数の戻り値の型は？ *)
     
     [<Koan>]
-    let TheTruthBehindMultipleReturnValues() =
+    let ``多値返り値の真実を知る``() =
         let squareAndCube x =
             (x ** 2.0, x ** 3.0)
             

@@ -21,10 +21,10 @@ open FSharpKoans.Core
 // F# プログラミングの武器が増えていきます。
 //---------------------------------------------------------------
 [<Koan(Sort = 1)>]
-module ``about asserts`` =
+module ``アサートについて`` =
 
     [<Koan>]
-    let AssertExpectation() =
+    let ``期待値をアサートする``() =
         let expected_value = 1 + 1
         let actual_value = __ // この行を変更することから始めましょう。
      
@@ -33,5 +33,5 @@ module ``about asserts`` =
     // 簡単ですね？もう一問やってみましょう。
 
     [<Koan>]
-    let FillInValues() =
+    let ``値を埋める``() =
         AssertEquality (1 + 1) __
